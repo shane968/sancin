@@ -1,78 +1,123 @@
-* General Styling */
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
 }
 
 header {
-    background-color: #531613;
+    text-align: center;
+    background-color: #333;
     color: white;
     padding: 20px;
-    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
 }
 
 nav {
-    background-color: #280977;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
+    text-align: center;
+    background-color: #444;
+    padding: 10px 0;
 }
 
 nav a {
     color: white;
-    margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
+    margin: 0 20px;
+    padding: 10px 0;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #ff6600;
+    border-bottom: 2px solid #ff6600;
 }
 
 main {
     padding: 20px;
-    max-width: 1200px;
-    margin: auto;
 }
 
-/* Gallery Section */
+main h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+}
+
+main p {
+    text-align: center;
+    font-size: 1.1em;
+    color: #555;
+    margin: 20px 0;
+}
+
 .gallery {
     display: flex;
+    justify-content: space-around;
+    gap: 20px;
     flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
     margin-top: 20px;
+    text-align: center;
 }
 
-.gallery img, .gallery video {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
+.gallery img,
 .gallery video {
-    max-width: 400px;
-    background-color: #000;
-}
-
-/* Section Titles */
-h2 {
-    color: #005f6b;
-    font-size: 1.8em;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Footer Styling */
-footer {
-    background-color: #1c0236;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
     width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+footer p {
+    font-size: 1em;
+    margin: 0;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery img,
+    .gallery video {
+        max-width: 90%;
+        margin-bottom: 20px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    main h2 {
+        font-size: 1.8em;
+    }
+
+    main p {
+        font-size: 1em;
+    }
+}
+
+/* Media Queries for Desktop Devices */
+@media (min-width: 769px) {
+    .gallery {
+        flex-direction: row;
+    }
 }
